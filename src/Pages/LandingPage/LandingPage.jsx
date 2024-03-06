@@ -7,78 +7,70 @@ import ReactCountryFlag from 'react-country-flag';
 
 const LandingPage = () => {
 
-    const [background, setBackground] = useState('landingPage');
+    const [background, setBackground] = useState('');
     const [title, setTitle] = useState('Travel Log');
     const [flag, setFlag] = useState('US');
 
-
     // slideshow logic
-    const [indexPrime, setIndexPrime] = useState(0);
-    const [indexSecond, setIndexSecond] = useState(1);
-    const [indexThird, setIndexThird] = useState(2);
+    const [indexPast, setIndexPast] = useState(0);
+    const [indexPrime, setIndexPrime] = useState(1);
+    const [indexFuture, setIndexFuture] = useState(2);
+    const imageDisplay = [indexPast, indexPrime, indexFuture];
 
-    const imageDisplay = [ indexPrime, indexSecond, indexThird ]
 
-    function nextPhoto() {
-        if (indexPrime === backgroundSettings.length - 1) {
-            setIndexPrime(0);
-            setIndexSecond(indexSecond + 1);
-            setIndexThird(indexThird + 1);
+    // slideshow 3 pic rotation
+    function nextPhoto(indexPrime) {
+        if (indexPrime + 3 > backgroundSettings.length) {
+            const prime = (indexPrime + 3) - (backgroundSettings.length);
+            const future = prime + 1;
+            const past = prime - 1;
+            setIndexPrime(prime);
+            setIndexPast(past);
+            setIndexFuture(future);
             return
-        } 
-        else if(indexSecond === backgroundSettings.length - 1) {
-            setIndexSecond(0);
-            setIndexPrime(indexPrime + 1);
-            setIndexThird(indexThird + 1);
+        }
+        else if (indexPrime + 3 === backgroundSettings.length) {
+            const prime = 0;
+            const future = prime + 1;
+            const past = backgroundSettings.length - 1;
+            setIndexPrime(prime);
+            setIndexPast(past);
+            setIndexFuture(future);
             return
-        } 
-        else if(indexThird === backgroundSettings.length - 1) {
-            setIndexThird(0);
-            setIndexSecond(indexSecond + 1);
-            setIndexPrime(indexPrime + 1);
+        }
+        else if (indexPrime + 3 === backgroundSettings.length - 1) {
+            const prime = (indexPrime + 3);
+            const past = prime - 1;
+            const future = 0;
+            setIndexPrime(prime);
+            setIndexPast(past);
+            setIndexFuture(future);
             return
         }
         else {
-            setIndexPrime(indexPrime + 1);
-            setIndexSecond(indexSecond + 1);
-            setIndexThird(indexThird + 1);
-        }
-    }
-    function prevPhoto() {
-        if (indexPrime === 0) {
-            setIndexPrime(backgroundSettings.length - 1);
-            setIndexSecond(indexSecond - 1); 
-            setIndexThird(indexThird - 1); 
+            let prime = indexPrime + 3;
+            let future = prime + 1;
+            let past = prime - 1;
+            setIndexPrime(prime);
+            setIndexFuture(future);
+            setIndexPast(past);
             return
-        } 
-        else if(indexSecond === 0) {
-            setIndexSecond(backgroundSettings.length - 1);
-            setIndexPrime(indexPrime - 1);
-            setIndexThird(indexThird - 1);
-            return
-        }
-        else if(indexThird === 0) {
-            setIndexThird(backgroundSettings.length - 1);
-            setIndexSecond(indexSecond - 1); 
-            setIndexPrime(indexPrime - 1);
-        }
-        else {
-            setIndexPrime(indexPrime - 1);
-            setIndexSecond(indexSecond - 1);
-            setIndexThird(indexThird - 1);
         }
     }
 
-    const countryCodes = [
-        'US',
-        'GT',
-        'MX',
-        'NZ'
-    ];
     const backgroundSettings = [
-        // Bahamas
+        // United States
         {
             position: 0,
+            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/nsasmhmuylu09u3hd4sz.jpg',
+            background: 'background0',
+            title: 'United States',
+            path: '/unitedstates',
+            countryCode: 'US',
+        },
+        // Bahamas
+        {
+            position: 1,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/c7qxbqdtmehml8dkhong.jpg',
             background: 'background1',
             title: 'Bahamas',
@@ -87,57 +79,86 @@ const LandingPage = () => {
         },
         // Canada
         {
-            position: 1,
+            position: 2,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/az6foxpi2urwpoh7ezvz.jpg',
             background: 'background2',
             title: 'Canada',
             path: '/canada',
             countryCode: 'CA',
         },
+        // Indonesia
+        {
+            position: 3,
+            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/qrah3zilihzhzdl6xluk.jpg',
+            background: 'background3',
+            title: 'Indonesia',
+            path: '/indonesia',
+            countryCode: 'ID',
+        },
+        // Mexico
+        {
+            position: 4,
+            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/yop6mdflwgyu8y1t8inv.jpg',
+            background: 'background4',
+            title: 'Mexico',
+            path: '/mexico',
+            countryCode: 'MX',
+        },
+        // Guatemala
+        {
+            position: 5,
+            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/saaraaxwom7julwcc9sa.jpg',
+            background: 'background5',
+            title: 'Guatemala',
+            path: '/guatemala',
+            countryCode: 'GT',
+        },
         // Costa Rica
         {
-            position: 2,
+            position: 6,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/dxxajmj8zdkka9rf10ab.jpg',
-            background: 'background3',
+            background: 'background6',
             title: 'Costa Rica',
             path: '/costarica',
             countryCode: 'CR',
         },
         // Greece
         {
-            position: 3,
+            position: 7,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/t90erqmpraxbdrlqws4z.jpg',
-            background: 'background4',
+            background: 'background7',
             title: 'Greece',
             path: '/greece',
             countryCode: 'GR',
         },
-        // Indonesia
-        {
-            position: 4,
-            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/qrah3zilihzhzdl6xluk.jpg',
-            background: 'background5',
-            title: 'Indonesia',
-            path: '/indonesia',
-            countryCode: 'ID',
-        },
         // Morocco
         {
-            position: 5,
+            position: 8,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/fltb8pxxhpw6ilzkwv4j.jpg',
-            background: 'background6',
+            background: 'background8',
             title: 'Morocco',
             path: '/morocco',
             countryCode: 'MA',
         },
+        // New Zealand
+        {
+            position: 9,
+            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/woppieclfpcedlr6xoun.jpg',
+            background: 'background9',
+            title: 'New Zealand',
+            path: '/newzealand',
+            countryCode: 'NZ',
+        },
+
+
     ];
+
 
 
     return (
         <div className='landingPage'>
-            <div className={background}>
 
-
+            <div className='indexDiv'>
                 <h1>{title}</h1>
                 <ReactCountryFlag
                     countryCode={flag}
@@ -148,45 +169,50 @@ const LandingPage = () => {
                     }}
                     title={flag}
                 />
-
-                <div className='imagesContainer'>
-                    {backgroundSettings.map((pic, i) => (
-                        <BackgroundDiv
-                            key={i}
-                            image={pic.image}
-                            background={pic.background}
-                            setBackground={setBackground}
-                            setTitle={setTitle}
-                            setFlag={setFlag}
-                            title={pic.title}
-                            path={pic.path}
-                            countryCode={pic.countryCode}
-                        />
-                    ))}
-                </div>
-
-
-
-                <div className='imagesContainer'>
-                    {imageDisplay.map((position) => (
-                        <BackgroundDiv
-                            key={backgroundSettings[position].position}
-                            image={backgroundSettings[position].image}
-                            background={backgroundSettings[position].background}
-                            setBackground={setBackground}
-                            setTitle={setTitle}
-                            setFlag={setFlag}
-                            title={backgroundSettings[position].title}
-                            path={backgroundSettings[position].path}
-                            countryCode={backgroundSettings[position].countryCode}
-                        />
-                    ))}
-                </div>
-                <button onClick={nextPhoto}>Next Photo</button>
-                <button onClick={prevPhoto}>Prev Photo</button>
-
-
             </div>
+
+{/* maps all location to the dom */}
+            {/* <div className='imagesContainer'>
+                {backgroundSettings.map((pic, i) => (
+                    <BackgroundDiv
+                        key={i}
+                        image={pic.image}
+                        background={pic.background}
+                        setBackground={setBackground}
+                        setTitle={setTitle}
+                        setFlag={setFlag}
+                        title={pic.title}
+                        path={pic.path}
+                        countryCode={pic.countryCode}
+                    />
+                ))}
+            </div> */}
+
+
+{/* maps just 3 locations to the dom */}
+            <div className='imagesContainer'>
+                {imageDisplay.map((position) => (
+                    <BackgroundDiv
+                        key={backgroundSettings[position].position}
+                        image={backgroundSettings[position].image}
+                        background={backgroundSettings[position].background}
+                        setBackground={setBackground}
+                        setTitle={setTitle}
+                        setFlag={setFlag}
+                        title={backgroundSettings[position].title}
+                        path={backgroundSettings[position].path}
+                        countryCode={backgroundSettings[position].countryCode}
+                    />
+                ))}
+            </div>
+            <div className='indexDiv'>
+                <button onClick={() => nextPhoto(indexPrime)}>Next Photo</button>
+            </div>
+
+            <div className={background}>
+            </div>
+
+
         </div>
     )
 }
