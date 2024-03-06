@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BackgroundDiv = ({ image, background, title, path, setBackground, setTitle }) => {
+const BackgroundDiv = ({ image, background, title, path, countryCode, setBackground, setTitle, setFlag }) => {
 
     function backgroundChange(newPic) {
         console.log('the mouse entered');
         setBackground(newPic);
         setTitle(title);
+        setFlag(countryCode)
     }
 
     return (
