@@ -25,7 +25,7 @@ const BackgroundDiv = ({
         // <Link to={path}>
             <img 
                 onMouseEnter={() => backgroundChange(background)}
-                // onMouseLeave={() => backgroundChange('')}
+                onMouseLeave={() => backgroundChange(`${background} hidden`)}
                 className='imagePic'
                 src={image}
             />

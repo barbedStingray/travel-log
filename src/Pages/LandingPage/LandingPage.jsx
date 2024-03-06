@@ -48,9 +48,9 @@ const LandingPage = () => {
             return
         }
         else {
-            let prime = indexPrime + 3;
-            let future = prime + 1;
-            let past = prime - 1;
+            const prime = indexPrime + 3;
+            const future = prime + 1;
+            const past = prime - 1;
             setIndexPrime(prime);
             setIndexFuture(future);
             setIndexPast(past);
@@ -149,8 +149,6 @@ const LandingPage = () => {
             path: '/newzealand',
             countryCode: 'NZ',
         },
-
-
     ];
 
 
@@ -171,7 +169,7 @@ const LandingPage = () => {
                 />
             </div>
 
-{/* maps all location to the dom */}
+            {/* maps all locations to the dom */}
             {/* <div className='imagesContainer'>
                 {backgroundSettings.map((pic, i) => (
                     <BackgroundDiv
@@ -189,7 +187,7 @@ const LandingPage = () => {
             </div> */}
 
 
-{/* maps just 3 locations to the dom */}
+            {/* maps just 3 locations to the dom */}
             <div className='imagesContainer'>
                 {imageDisplay.map((position) => (
                     <BackgroundDiv
@@ -205,6 +203,7 @@ const LandingPage = () => {
                     />
                 ))}
             </div>
+
             <div className='indexDiv'>
                 <button onClick={() => nextPhoto(indexPrime)}>Next Photo</button>
             </div>

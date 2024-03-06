@@ -60,7 +60,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fade-in 1s;
+
+  animation: fade-in 0.65s;
 
 }
 
@@ -71,6 +72,8 @@
 .buildingPage {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/pxbna7z8fmfcjioi1shs.jpg);
 }
+
+
 
 
 .background0 {
@@ -131,7 +134,7 @@
   justify-content: center;
   /* align-items: center; */
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 45px;
   z-index: 999;
 }
 
@@ -146,10 +149,14 @@
 
 }
 
-.imagePic:hover {
+/* .imagePic:hover {
   transform: translateY(8px);
-}
+} */
 
 .indexDiv {
   z-index: 999;
+}
+
+.hidden {
+  animation: fade-out 0.65s forwards;
 }
