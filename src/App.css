@@ -4,6 +4,82 @@
   box-sizing: border-box;
 }
 
-.travelImage {
-  border: 2px solid red;
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.landingPage,
+.buildingPage, 
+.background1,
+.background2,
+.background3,
+.background4,
+.background5,
+.background6 {
+  border: 2px solid gold;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.landingPage {
+  background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/qjxwva629nmjgssnrbjr.jpg);
+}
+.buildingPage {
+  background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/pxbna7z8fmfcjioi1shs.jpg);
+}
+.background1 {
+  background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/c7qxbqdtmehml8dkhong.jpg);
+  /* animation: fade 3s; */
+}
+.background2 {
+  background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/dxxajmj8zdkka9rf10ab.jpg);
+  /* animation: fade 3s; */
+}
+.background3 {
+  background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/az6foxpi2urwpoh7ezvz.jpg);
+  /* animation: fade 3s; */
+}
+.background4 {
+  background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/t90erqmpraxbdrlqws4z.jpg);
+  /* animation: fade 3s; */
+}
+.background5 {
+  background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/qrah3zilihzhzdl6xluk.jpg);
+  /* animation: fade 3s; */
+}
+.background6 {
+  background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/fltb8pxxhpw6ilzkwv4j.jpg);
+  /* animation: fade 3s; */
+}
+
+.imagesContainer {
+  border: 2px solid limegreen;
+  width: 75vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.imagePic {
+  width: 125px;
+  border: 8px double black;
+  background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+    transition: 0.3s;
+}
+.imagePic:hover {
+  transform: translateY(10px);
 }
