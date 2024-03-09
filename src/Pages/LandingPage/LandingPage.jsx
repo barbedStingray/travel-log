@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import { motion as m } from 'framer-motion';
 
 import BackgroundDiv from '../../Components/BackgroundDiv';
 
 import ReactCountryFlag from 'react-country-flag';
 
 
+
+
 const LandingPage = () => {
 
     const [background, setBackground] = useState('');
     const [title, setTitle] = useState('Travel Log');
-    const [flag, setFlag] = useState('US');
+    // const [flag, setFlag] = useState('US');
 
     // slideshow logic
     const [indexPast, setIndexPast] = useState(0);
@@ -57,7 +60,6 @@ const LandingPage = () => {
             return
         }
     }
-
     const backgroundSettings = [
         // United States
         {
@@ -152,13 +154,20 @@ const LandingPage = () => {
     ];
 
 
-
     return (
-        <div className='landingPage'>
+        <m.div 
+            className='landingPage'
+            key={'/'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}      
+        >
+
 
             <div className='indexDiv'>
                 <h1>{title}</h1>
-                <ReactCountryFlag
+                {/* <ReactCountryFlag
                     countryCode={flag}
                     svg
                     style={{
@@ -166,8 +175,10 @@ const LandingPage = () => {
                         height: '3em',
                     }}
                     title={flag}
-                />
+                /> */}
             </div>
+            <h1>March 8th, 2024</h1>
+            <h1>X</h1>
 
             {/* maps all locations to the dom */}
             {/* <div className='imagesContainer'>
@@ -196,10 +207,8 @@ const LandingPage = () => {
                         background={backgroundSettings[position].background}
                         setBackground={setBackground}
                         setTitle={setTitle}
-                        setFlag={setFlag}
                         title={backgroundSettings[position].title}
                         path={backgroundSettings[position].path}
-                        countryCode={backgroundSettings[position].countryCode}
                     />
                 ))}
             </div>
@@ -208,11 +217,9 @@ const LandingPage = () => {
                 <button onClick={() => nextPhoto(indexPrime)}>Next Photo</button>
             </div>
 
-            <div className={background}>
-            </div>
+            <div className={background}></div>
 
-
-        </div>
+        </m.div>
     )
 }
 

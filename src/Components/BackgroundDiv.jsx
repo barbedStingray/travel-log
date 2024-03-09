@@ -6,30 +6,31 @@ const BackgroundDiv = ({
     background, 
     title, 
     path, 
-    countryCode, 
     setBackground, 
-    setTitle, 
-    setFlag, }) => {
+    setTitle, }) => {
 
 
     function backgroundChange(newPic) {
         console.log('the mouse entered');
         setBackground(newPic);
         setTitle(title);
-        setFlag(countryCode);
+    }
+    function backgroundReset(newPic) {
+        setBackground(newPic);
+        setTitle('Travel Log');
     }
 
     
 
     return (
-        // <Link to={path}>
+        <Link to={path}>
             <img 
                 onMouseEnter={() => backgroundChange(background)}
-                onMouseLeave={() => backgroundChange(`${background} hidden`)}
+                onMouseLeave={() => backgroundReset(`${background} hidden`)}
                 className='imagePic'
                 src={image}
             />
-        // </Link>
+        </Link>
 
     )
 }

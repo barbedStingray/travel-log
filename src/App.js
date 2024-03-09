@@ -1,4 +1,6 @@
 import './App.css';
+import { AnimatePresence } from 'framer-motion';
+
 
 // browser
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -18,12 +20,16 @@ function App() {
   return (
     <div className="travelLog">
 
-      <Routes>
-        <Route path="/" element={ <LandingPage /> } />
-        {/* <Route path="*" element={ <BuildingPage /> } /> */}
-        {/* <Route path='/morocco' element={ <Morocco /> } /> */}
-      </Routes>
-
+      <AnimatePresence
+        mode='wait'
+        // initial={false}
+      >
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="*" element={<BuildingPage />} />
+          <Route path='/morocco' element={<Morocco />} />
+        </Routes>
+      </AnimatePresence>
 
 
     </div>

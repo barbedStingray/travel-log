@@ -3,6 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  background-color: black;
+  /* background-image: url(./Photos/adventureMap.jpg);
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
+}
+
+@font-face {
+  font-family: tradeWinds;
+  src: url(./Fonts/TradeWinds-Regular.ttf);
+}
 
 @keyframes fade-in {
   from {
@@ -10,19 +24,20 @@
   }
 
   to {
-    opacity: 1;
+    opacity: 1; 
   }
-}
+} 
+/* 0.6 is kinda cool */
 
 @keyframes fade-out {
   from {
     opacity: 1;
   }
-
   to {
     opacity: 0;
   }
 }
+
 
 .landingPage,
 .buildingPage {
@@ -35,10 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  animation: fade-in 1s forwards;
 }
-
 .background0,
 .background1,
 .background2,
@@ -49,7 +61,7 @@
 .background7,
 .background8,
 .background9 {
-  border: 2px solid gold;
+  /* border: 2px solid gold; */
   position: absolute;
   z-index: 1;
   height: 100vh;
@@ -57,106 +69,158 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  animation: fade-in 0.65s;
-
+  animation: fade-in 0.65s forwards;
 }
 
 .landingPage {
-  background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/qjxwva629nmjgssnrbjr.jpg);
+  background-image: url(./Photos/adventureMap.jpg);
+  font-family: tradeWinds;
 }
-
 .buildingPage {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/pxbna7z8fmfcjioi1shs.jpg);
 }
-
-
-
 
 .background0 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/nsasmhmuylu09u3hd4sz.jpg);
   /* animation: fade 1s; */
 }
-
 .background1 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/c7qxbqdtmehml8dkhong.jpg);
   /* animation: fade 1s; */
 }
-
 .background2 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/az6foxpi2urwpoh7ezvz.jpg);
   /* animation: fade 1s; */
 }
-
 .background3 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/qrah3zilihzhzdl6xluk.jpg);
   /* animation: fade 1s; */
 }
-
 .background4 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/yop6mdflwgyu8y1t8inv.jpg);
   /* animation: fade 1s; */
 }
-
 .background5 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/saaraaxwom7julwcc9sa.jpg);
   /* animation: fade 1s; */
 }
-
 .background6 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/dxxajmj8zdkka9rf10ab.jpg);
   /* animation: fade 1s; */
 }
-
 .background7 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/t90erqmpraxbdrlqws4z.jpg);
   /* animation: fade 1s; */
 }
-
 .background8 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/fltb8pxxhpw6ilzkwv4j.jpg);
   /* animation: fade 1s; */
 }
-
 .background9 {
   background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/woppieclfpcedlr6xoun.jpg);
   /* animation: fade 1s; */
 }
 
+
+/* **** Begin Slideshow */
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .imagesContainer {
-  border: 2px solid limegreen;
-  width: 75vw;
+  /* border: 2px solid limegreen; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   /* align-items: center; */
   flex-wrap: wrap;
   gap: 45px;
-  z-index: 999;
+  z-index: 3;
 }
-
 .imagePic {
   width: 125px;
   border: 7px double black;
-  background-color: white;
+  background-color: transparent;
   border-radius: 10px;
   box-shadow: 0 0 15px black;
   transition: 0.3s;
-  animation: fade-in 1s;
 
+  animation: slide-in 0.5s 
 }
 
-/* .imagePic:hover {
-  transform: translateY(8px);
-} */
-
 .indexDiv {
-  z-index: 999;
+  z-index: 3;
 }
 
 .hidden {
   animation: fade-out 0.65s forwards;
 }
+
+
+
+/* *** Begin Morocco CSS */
+@keyframes scroll-watcher {
+  to { scale: 1 1; }
+}
+@keyframes pictureFade {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+.parallaxWrapper {
+  border: 2px solid blue;
+
+}
+.moroccoPage {
+  background-color: grey;
+}
+.scrollWatcher {
+  height: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: lime;
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+.moroccoFlag {
+  /* width: 100%;
+  height: auto; */
+  width: 100%;
+  height: 400px;
+  background-image: url(./Photos/moroccoFlag.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.moroccoPic {
+  width: 500px;
+  height: auto;
+  margin-bottom: 400px;
+
+  scale: 0.8;
+  opacity: 0;
+
+
+  animation: pictureFade linear forwards;
+  animation-timeline: view(); /* start and end from top and button */
+  /* animation-range: contain 100px; */
+  animation-range-start: contain; /* px or when photo is contained */
+  animation-range-end: 700px;
+}
+
