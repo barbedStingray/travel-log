@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion as m } from 'framer-motion';
 
+
 import BackgroundDiv from '../../Components/BackgroundDiv';
+import './LandingPage.css';
 
 import ReactCountryFlag from 'react-country-flag';
 
@@ -15,6 +17,7 @@ import { GiCompass } from "react-icons/gi";
 const LandingPage = () => {
 
     const [background, setBackground] = useState('');
+    const [countryCSS, setCountryCSS] = useState('');
     const [title, setTitle] = useState('');
     const [photoSlides, setPhotoSlides] = useState('imagesContainer');
     // const [flag, setFlag] = useState('US');
@@ -83,6 +86,7 @@ const LandingPage = () => {
             position: 0,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/nsasmhmuylu09u3hd4sz.jpg',
             background: 'background0',
+            countryCSS: 'titleUS',
             title: 'United States',
             path: '/unitedstates',
             countryCode: 'US',
@@ -90,8 +94,9 @@ const LandingPage = () => {
         // Bahamas
         {
             position: 1,
-            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/c7qxbqdtmehml8dkhong.jpg',
+            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/Bahamas/xotemlwkyfgwquakqw45.jpg',
             background: 'background1',
+            countryCSS: 'titleBS',
             title: 'Bahamas',
             path: '/bahamas',
             countryCode: 'BS',
@@ -101,6 +106,7 @@ const LandingPage = () => {
             position: 2,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/az6foxpi2urwpoh7ezvz.jpg',
             background: 'background2',
+            countryCSS: 'titleCA',
             title: 'Canada',
             path: '/canada',
             countryCode: 'CA',
@@ -110,6 +116,7 @@ const LandingPage = () => {
             position: 3,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/qrah3zilihzhzdl6xluk.jpg',
             background: 'background3',
+            countryCSS: 'titleID',
             title: 'Indonesia',
             path: '/indonesia',
             countryCode: 'ID',
@@ -117,8 +124,9 @@ const LandingPage = () => {
         // Mexico
         {
             position: 4,
-            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/yop6mdflwgyu8y1t8inv.jpg',
+            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/Mexico/rhzehtpceqssjfb7b9xp.jpg',
             background: 'background4',
+            countryCSS: 'titleMX',
             title: 'Mexico',
             path: '/mexico',
             countryCode: 'MX',
@@ -128,6 +136,7 @@ const LandingPage = () => {
             position: 5,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/saaraaxwom7julwcc9sa.jpg',
             background: 'background5',
+            countryCSS: 'titleGT',
             title: 'Guatemala',
             path: '/guatemala',
             countryCode: 'GT',
@@ -135,8 +144,9 @@ const LandingPage = () => {
         // Costa Rica
         {
             position: 6,
-            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/dxxajmj8zdkka9rf10ab.jpg',
+            image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/costaRica/nvprfu65xnw70ncqu2vl.jpg',
             background: 'background6',
+            countryCSS: 'titleCR',
             title: 'Costa Rica',
             path: '/costarica',
             countryCode: 'CR',
@@ -146,6 +156,7 @@ const LandingPage = () => {
             position: 7,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/t90erqmpraxbdrlqws4z.jpg',
             background: 'background7',
+            countryCSS: 'titleGR',
             title: 'Greece',
             path: '/greece',
             countryCode: 'GR',
@@ -155,6 +166,7 @@ const LandingPage = () => {
             position: 8,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/fltb8pxxhpw6ilzkwv4j.jpg',
             background: 'background8',
+            countryCSS: 'titleMA',
             title: 'Morocco',
             path: '/morocco',
             countryCode: 'MA',
@@ -164,6 +176,7 @@ const LandingPage = () => {
             position: 9,
             image: 'http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/woppieclfpcedlr6xoun.jpg',
             background: 'background9',
+            countryCSS: 'titleNZ',
             title: 'New Zealand',
             path: '/newzealand',
             countryCode: 'NZ',
@@ -182,7 +195,6 @@ const LandingPage = () => {
             pathLength: 1,
             fill: "rgba(0, 128, 0, 1)"
         }
-
     };
 
 
@@ -243,7 +255,7 @@ const LandingPage = () => {
                         animate="visible"
                         transition={{
                             default: { duration: 10, ease: "easeInOut" },
-                            fill: { duration: 1, ease: [1, 0, 0.8, 1], delay: 4.5 }
+                            fill: { duration: 2, ease: [1, 0, 0.8, 1], delay: 4 }
                         }}
                     />
                 </m.svg>
@@ -258,6 +270,8 @@ const LandingPage = () => {
                         image={backgroundSettings[position].image}
                         background={backgroundSettings[position].background}
                         setBackground={setBackground}
+                        setCountryCSS={setCountryCSS}
+                        titleCSS={backgroundSettings[position].countryCSS}
                         setTitle={setTitle}
                         title={backgroundSettings[position].title}
                         path={backgroundSettings[position].path}
@@ -272,7 +286,7 @@ const LandingPage = () => {
             </div>
 
             <div className={background}>
-                <h1>{title}</h1>
+                <h1 className={`titleCSS ${countryCSS}`}>{title}</h1>
             </div>
 
 

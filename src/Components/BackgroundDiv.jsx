@@ -7,13 +7,17 @@ const BackgroundDiv = ({
     title, 
     path, 
     setBackground, 
-    setTitle, }) => {
+    setTitle, 
+    setCountryCSS, 
+    titleCSS
+    }) => {
 
 
     function backgroundChange(newPic) {
-        console.log('the mouse entered');
+        console.log(`titleCSS`, titleCSS);
         setBackground(newPic);
         setTitle(title);
+        setCountryCSS(titleCSS);
     }
     function backgroundReset(newPic) {
         setBackground(newPic);

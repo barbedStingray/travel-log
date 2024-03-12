@@ -1,0 +1,208 @@
+.landingPage {
+    /* background-image: linear-gradient(to top, #0e0e0e, #474747); */
+    background:
+        linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+        linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+        linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+        linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+        linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+        linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+    font-family: tradeWinds;
+}
+
+.background0,
+.background1,
+.background2,
+.background3,
+.background4,
+.background5,
+.background6,
+.background7,
+.background8,
+.background9 {
+    /* border: 2px solid gold; */
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: fade-in 0.6s forwards;
+}
+
+.titleCSS {
+    /* border: 2px solid red; */
+    width: 40vw;
+    min-width: 320px;
+    padding: 0.75vh;
+    font-size: 7vh;
+    color: white;
+    margin: 3vh 0 0vw 5vw;
+    text-align: center;
+    -webkit-text-stroke: 0.75px black;
+}
+
+
+
+.background0 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/nsasmhmuylu09u3hd4sz.jpg);
+}
+.titleUS {
+    background-image: linear-gradient(to left, #ff000044, #ffffff44, #0000ff44);
+}
+.background1 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/Bahamas/xotemlwkyfgwquakqw45.jpg);
+}
+.titleBS {
+    color: #fde55f;
+    background-image: linear-gradient(to right, #00000044, #89fff744, #ffffff44);
+}
+.background2 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/az6foxpi2urwpoh7ezvz.jpg);
+}
+.titleCA {
+    color: red;
+    background-image: linear-gradient(to right, #ff000044, #ffffff44, #ff000044);
+}
+.background3 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/qrah3zilihzhzdl6xluk.jpg);
+}
+.titleID {
+    background-image: linear-gradient(to bottom, #ff000044, #ffffff44);
+}
+.background4 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/Mexico/rhzehtpceqssjfb7b9xp.jpg);
+}
+.titleMX {
+    background-image: linear-gradient(to left, #ff000044, #ffffff44, #00800044);
+}
+.background5 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/saaraaxwom7julwcc9sa.jpg);
+}
+.titleGT {
+    background-image: linear-gradient(to right, #89fff744, #ffffff44, #89fff744);
+}
+.background6 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/costaRica/nvprfu65xnw70ncqu2vl.jpg);
+}
+.titleCR {
+    background-image: linear-gradient(to top, #0000ff44, #ffffff44, #ff000044, #ffffff44, #0000ff44);
+}
+.background7 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/t90erqmpraxbdrlqws4z.jpg);
+}
+.titleGR {
+    background-image: linear-gradient(to right, #0000ff44, #ffffff44, #0000ff44, #ffffff44, #0000ff44, #ffffff44);
+}
+.background8 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/fltb8pxxhpw6ilzkwv4j.jpg);
+}
+.titleMA {
+    color: green;
+    background-color: #ff000044;
+}
+.background9 {
+    background-image: url(http://res.cloudinary.com/dzh1qe1zp/image/upload/v1704915035/woppieclfpcedlr6xoun.jpg);
+}
+.titleNZ {
+    background-image: linear-gradient(to left, #ffffff44, #ff000044, #ffffff44, #0000ff44, #ffffff44, #ff000044, #ffffff44);
+}
+
+
+.titleLog {
+    /* border: 2px solid green; */
+    font-size: 5rem;
+    font-size: 12vh;
+    margin-top: 2vh;
+    color: white;
+    text-shadow: 5px 5px var(--time-color);
+    animation: colors var(--color-time) linear 0s infinite;
+}
+
+.stingrayContainer {
+    /* border: 2px solid blue; */
+    height: 48vh;
+    width: 48vw;
+    display: flex;
+    place-content: center;
+    overflow: hidden;
+}
+
+.stingray {
+    /* border: 2px solid blue; */
+    width: 96%;
+    height: 96%;
+    overflow: visible;
+    stroke: var(--time-color);
+    stroke-width: 20;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    margin: auto;
+    /* filter: drop-shadow(5px 5px 2px darkred);  */
+    /* filter: blur(5px);  */
+    /* filter: drop-shadow(3px 3px red) sepia(100%) drop-shadow(-3px -3px blue); */
+    /* filter: hue-rotate(0deg); */
+    animation: colors var(--color-time) linear 0s infinite;
+}
+
+.imagesContainer {
+    display: none;
+    position: absolute;
+    bottom: 6vh;
+    z-index: 3;
+    width: 100%;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+
+    border-top: 2px solid white;
+    border-bottom: 2px solid silver;
+    background-image: linear-gradient(to top, #3f3f3f, #b4b4b4);
+    box-shadow: 0 0 7px white;
+    padding: 10px;
+
+    animation: fade-in 1s;
+}
+
+.imagePic {
+    width: 125px;
+    border: 2px solid white;
+    background-color: transparent;
+    box-shadow: 4px 4px 10px #000000aa;
+    transition: 0.3s;
+    animation: slide-in 0.5s
+}
+
+.imagePic:hover {
+    transform: scale(1.05);
+    /* transform: translateY(-3px); */
+}
+
+.compassIcon {
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    filter: drop-shadow(4px 4px 2px #00000050);
+    transition: 0.5s;
+}
+
+.compassIcon:hover {
+    transform: rotate(60deg);
+}
+
+
+/* reveals the image banner */
+.unhide {
+    display: flex;
+}
+
+/* fade out the picture div */
+.hidden {
+    animation: fade-out 0.65s forwards;
+}
