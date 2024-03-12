@@ -17,7 +17,6 @@ const BackgroundDiv = ({
     }
     function backgroundReset(newPic) {
         setBackground(newPic);
-        setTitle('Travel Log');
     }
 
     
