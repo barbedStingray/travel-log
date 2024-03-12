@@ -8,7 +8,7 @@
   background-color: black;
 
   /* ** global css variables ** */
-  --color-time: 5s;
+  --color-time: 25s;
   --time-color: rgb(0, 128, 0);
 }
 
