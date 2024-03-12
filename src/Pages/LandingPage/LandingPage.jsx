@@ -175,12 +175,12 @@ const LandingPage = () => {
         hidden: {
             // opacity: 0,
             pathLength: 0,
-            fill: "rgba(255, 255, 255, 0)"
+            fill: "rgba(0, 128, 0, 0)"
         },
         visible: {
             // opacity: 1,
             pathLength: 1,
-            fill: "rgba(255, 255, 255, 1)"
+            fill: "rgba(0, 128, 0, 1)"
         }
 
     };
@@ -249,35 +249,9 @@ const LandingPage = () => {
                 </m.svg>
             </div>
 
-
-            {/* <h2>March 8th, 2024</h2> */}
-
-            {/* maps all locations to the dom */}
-            {/* <div className='imagesContainer'>
-                {backgroundSettings.map((pic, i) => (
-                    <BackgroundDiv
-                        key={i}
-                        image={pic.image}
-                        background={pic.background}
-                        setBackground={setBackground}
-                        setTitle={setTitle}
-                        setFlag={setFlag}
-                        title={pic.title}
-                        path={pic.path}
-                        countryCode={pic.countryCode}
-                    />
-                ))}
-            </div> */}
-
             {/* maps just 3 locations to the dom */}
             <div className={photoSlides}>
 
-                <div
-                    className='compassIcon'
-                    onClick={() => nextPhoto(indexPrime)}
-                >
-                    <GiCompass />
-                </div>
                 {imageDisplay.map((position) => (
                     <BackgroundDiv
                         key={backgroundSettings[position].position}
