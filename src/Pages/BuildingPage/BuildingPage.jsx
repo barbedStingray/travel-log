@@ -14,7 +14,7 @@ const BuildingPage = () => {
       transition={{ duration: 0.5, ease: 'easeInOut' }}
 
     >
-      <h1>Sorry, I'm not complete yet!</h1>
+      <h1>Sorry, still working on this one.</h1>
       <p>Have a drink...</p>
       <p>Enjoy the View...</p>
       <Link to='/'><p>Travel Back Home</p></Link>

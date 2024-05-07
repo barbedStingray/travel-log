@@ -1,0 +1,91 @@
+.unitedStatesPage {
+    border: 2px solid lime;
+    background-color: aliceblue;
+    width: 100vw;
+    height: 100vh;
+}
+
+.alaskaPic {
+    /* width: 200px;
+    height: auto; */
+    width: 100%;
+}
+
+.coolDiamondContainer {
+    border: 3px solid blue;
+    height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.coolDiamonds {
+    /* account for the gap */
+    --gap-size: 0.25rem;
+    --img-size: 100px;
+    border: 3px solid red;
+    display: grid;
+    grid-template-columns: repeat(6, calc(var(--img-size) - var(--gap-size) / 2));
+    grid-template-rows: repeat(4, calc(var(--img-size) - var(--gap-size) / 2));
+    gap: 0.3rem;
+
+
+    /* applies to photos within the div */
+    &:has(:hover) img:not(:hover),
+    &:has(:focus) img:not(:focus) {
+        filter:
+            brightness(0.75)
+            /* contrast(0.75)  */
+            saturate(0.25);
+    }
+
+
+
+    img {
+        aspect-ratio: 1;
+        /* height: 100%; */
+        object-fit: cover;
+        border-radius: 10px;
+        grid-column: span 2;
+
+        transition:
+            filter 0.4s,
+            clip-path 0.4s;
+
+        /* grid-row: span 2; */
+        /* clip-path: path("M90,10 C100,0 100,0 110,10 190,90 190, 90 190, 90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z"); */
+        clip-path: path("M 80 20 C 100 0 100 0 120 20 C 140 40 160 60 180 80 C 200 100 200 100 180 120 C 160 140 140 160 120 180 C 100 200 100 200 80 180 C 60 160 40 140 20 120 C 0 100 0 100 20 80 Z");
+
+        &:nth-of-type(4) {
+            grid-column: 2 / span 2;
+        }
+
+        &:hover {
+            /* clip-path: path("M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z"); */
+            clip-path: path("M 0 0 C 100 0 100 0 200 0 C 200 50 200 50 200 80 C 200 100 200 100 200 120 C 200 150 200 150 200 200 C 100 200 100 200 0 200 C 0 150 0 150 0 120 C 0 100 0 100 0 80 Z");
+            z-index: 100;
+        }
+
+        &:not(:hover) {
+            animation: zIndexHack 500ms;
+        }
+    }
+
+}
+
+/* applies to the whole div */
+/* .coolDiamonds:hover > img {
+    filter: brightness(0.5) saturate(0.5);
+}
+
+.coolDiamonds > img:hover {
+    filter: brightness(1) saturate(1);
+} */
+
+/* allows the image to stay at a higher z-index after it is non-hovered */
+@keyframes zIndexHack {
+
+    0%,
+    100% {
+        z-index: 10;
+    }
+}

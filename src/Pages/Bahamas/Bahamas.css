@@ -1,0 +1,106 @@
+
+
+.bahamasPage {
+    border: 2px solid red;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.bahamasPageTitle {
+    border: 2px solid gold;
+    height: 100px;
+    display: flex;
+}
+
+.scrollWatcher {
+    height: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: lime;
+    width: 100%;
+    animation: scrollwatching linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scrollwatching {
+    to {
+        scale: 1 1;
+    }
+}
+
+.bahamasScrollWrapper {
+    border: 2px solid skyblue;
+    background-color: aliceblue;
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+    /* overflow: scroll; */
+    /* width: 100vw; */
+    /* height: 90%; */
+}
+
+.bahamaPic {
+    width: 250px;
+    height: auto;
+}
+
+
+
+
+
+
+    .animateBahamaPic {
+        animation: picture-in linear forwards;
+        animation-timeline: view();
+        animation-range: 200px 400px;
+        /* animation-range: entry; */
+        /* animation-range: exit; */
+        /* animation-range: entry/exit-crossing; */
+        
+        scale: 0.8;
+        opacity: 0;
+        /* animation-range-start: 300px; */
+        /* cover entry contain */
+        /* animation-range-end: 600px; */
+    }
+
+    @keyframes picture-in {
+
+        /* from {
+            scale: 0.8;
+            opacity: 0;
+        } */
+        to {
+            scale: 1;
+            opacity: 1;
+        }
+    }
+
+
+    .sidescrolling {
+        border: 2px solid blue;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        overflow: scroll;
+    }
+    .leftScroll,
+    .rightScroll {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .leftScroll {
+        border: 2px solid red;
+    }
+    rightScroll {
+        border: 2px solid green;
+    }
+
